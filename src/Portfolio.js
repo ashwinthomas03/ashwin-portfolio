@@ -143,7 +143,7 @@ const Portfolio = () => {
         )}
       </AnimatePresence>
 
-      {/* Main Content */}
+      {/* Main Content, test*/}
       <motion.div 
         className="relative min-h-screen bg-gray-50"
         variants={contentVariants}
