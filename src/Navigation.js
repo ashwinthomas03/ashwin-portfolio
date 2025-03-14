@@ -87,7 +87,7 @@ const Navigation = ({ activeSection, scrollToSection }) => {
             whileTap={{ scale: 0.95 }}
           >
             <span className="text-blue-600">&lt;</span>
-            Ashwin.dev
+            Ashwin.build(dev)
             <span className="text-blue-600">/&gt;</span>
           </motion.h1>
 
