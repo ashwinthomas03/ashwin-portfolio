@@ -37,7 +37,7 @@ const Portfolio = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Handle scroll
+  // Handle scroll//testing
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
