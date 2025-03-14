@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+}
+
+section {
+  @apply py-16 px-8 md:py-24;
+}
+
+nav {
+  @apply bg-white shadow-md;
+}
+
+nav button {
+  @apply text-gray-700 hover:text-blue-600 hover:bg-gray-100 rounded-md px-4 py-2;
+}
+
+.timeline-container {
+  @apply max-w-3xl mx-auto flex justify-center;
+  position: relative;
+}
+
+.timeline {
+  @apply relative pl-10; /* Adjusted left padding */
+  margin-top: 3rem;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* The vertical timeline line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px; /* Position the line 20px from the left edge */
+  width: 2px; /* Line width */
+  background-color: #3B82F6; /* Blue-500 color */
+  z-index: 1; /* Ensure it's above background elements */
+}
+
+.timeline-item {
+  @apply relative mb-8 pb-8; /* Maintain increased spacing */
+  border-bottom: 1px dashed rgba(59, 130, 246, 0.2);
+  position: relative;
+  margin-left: 20px; /* Give space for the line and dots */
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+/* The timeline circles */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px; /* Adjusted positioning */
+  top: 6px;
+  width: 16px; /* Circle width */
+  height: 16px; /* Circle height */
+  border-radius: 50%;
+  background-color: #3B82F6; /* Blue-500 color */
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  z-index: 2; /* Ensure it's above the line */
+}
+
+.timeline-date {
+  @apply text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full inline-flex items-center;
+}
+
+.experience-card {
+  @apply relative p-6 rounded-xl shadow-md bg-white transition-all duration-300;
+}
+
+.experience-card:hover {
+  @apply shadow-lg -translate-y-1;
+}
+
+/* Add visual separator between experiences */
+.separator {
+  @apply w-full h-px bg-gray-200 my-8;
+}
+
+/* Ensure content is centered properly */
+.experience-section-container {
+  @apply flex justify-center items-center w-full;
+}
+
+.resume-button {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300;
+  background: linear-gradient(135deg, white, #f9fafb);
+  color: #3B82F6;
+  border: 2px solid #3B82F6;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 0 2px 4px -1px rgba(59, 130, 246, 0.06);
+}
+
+.resume-button:hover {
+  @apply bg-blue-50;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2), 0 4px 6px -2px rgba(59, 130, 246, 0.1);
+}
+
+.resume-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 0 2px 4px -1px rgba(59, 130, 246, 0.06);
+}
+
+/* Download icon animation */
+.download-icon {
+  transition: transform 0.3s ease;
+}
+
+.resume-button:hover .download-icon {
+  transform: translateY(2px);
+}
+
+.social-icon {
+  @apply flex items-center justify-center w-14 h-14 rounded-full transition-all duration-300;
+  background-color: #3B82F6; /* Blue-500 - Primary color */
+  color: white;
+  margin: 0 10px;
+}
+
+/* LinkedIn */
+.social-icon.linkedin {
+  background-color: #3B82F6; /* Blue-500 */
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+}
+
+.social-icon.linkedin:hover {
+  background-color: #2563EB; /* Blue-600 */
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+/* GitHub */
+.social-icon.github {
+  background-color: #1E40AF; /* Blue-800 */
+  box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.2);
+}
+
+.social-icon.github:hover {
+  background-color: #1E3A8A; /* Blue-900 */
+  box-shadow: 0 5px 15px rgba(30, 64, 175, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Email */
+.social-icon.email {
+  background-color: #60A5FA; /* Blue-400 */
+  box-shadow: 0 4px 6px -1px rgba(96, 165, 250, 0.2);
+}
+
+.social-icon.email:hover {
+  background-color: #3B82F6; /* Blue-500 */
+  box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Resume Button - Now with background color and styling */
+.resume-button-styled {
+  @apply flex items-center px-5 py-3 rounded-lg font-medium transition-all duration-300;
+  background-color: #111827; /* Gray-900 (almost black) */
+  color: white;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+}
+
+.resume-button-styled:hover {
+  background-color: #1F2937; /* Gray-800 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.pdf-icon {
+  @apply flex items-center justify-center mr-2 text-xs font-bold;
+  background-color: #EF4444; /* Red-500 */
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+}
+/* Main CTA buttons */
+.custom-button {
+  @apply inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-medium text-white bg-blue-600 transition-all duration-300;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+  min-width: 160px;
+}
+
+.custom-button:hover {
+  @apply bg-blue-700;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+}
+
+.custom-button-outline {
+  @apply inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-medium transition-all duration-300;
+  color: #3B82F6; /* Blue-500 */
+  background-color: transparent;
+  border: 2px solid #3B82F6;
+  min-width: 160px;
+}
+
+.custom-button-outline:hover {
+  @apply bg-blue-50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .social-icon {
+    @apply w-12 h-12;
+    margin: 0 6px;
+  }
+  
+  .resume-button-styled {
+    @apply flex items-center px-5 py-3 rounded-lg font-medium transition-all duration-300;
+    background-color: #111827; /* Gray-900 (almost black) */
+    color: white;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+  }
+  
+  .custom-button, .custom-button-outline {
+    @apply px-6 py-3 text-sm;
+    min-width: 140px;
+  }
+}
+
+/* Pulse animation for download button */
+@keyframes pulse-download {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse-download 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline {
+    @apply pl-8;
+    max-width: 100%;
+  }
+  
+  .timeline::before {
+    left: 16px;
+  }
+  
+  .timeline-item {
+    @apply mb-20 pb-12;
+    margin-left: 15px;
+  }
+  
+  .timeline-item::before {
+    left: -24px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    @apply px-4 py-2;
+  }
+
+  nav button {
+    @apply block w-full text-left;
+  }
+
+  /* Mobile Menu Smooth Transition */
+  .mobile-menu-transition {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .mobile-menu-transition.open {
+    height: auto;
+    opacity: 1;
+  }
+
+  /* Position for Close Button (X) */
+  .mobile-menu-transition .absolute {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+  }
+  
+ 
+}
+
+
