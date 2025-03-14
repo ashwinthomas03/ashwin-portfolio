@@ -1,7 +1,7 @@
 {
   "name": "portfolio_at",
   "version": "0.1.0",
-  "homepage": "https://username.github.io",
+  "homepage": "https://ashwinthomas03.github.io/ashwin-portfolio",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
@@ -46,5 +46,4 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17"
   }
-  
 }
