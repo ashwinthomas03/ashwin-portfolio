@@ -9,9 +9,6 @@ import Projects from './Projects';
 import Contact from './Contact';
 import './index.css';
 
-// Import typewriter-effect (you'll need to install this package)
-// npm install typewriter-effect
-
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -112,7 +109,7 @@ const Portfolio = () => {
 
   return (
     <>
-      {/* Loading Screen */}
+      {/* Loading Screen - Made responsive for mobile */}
       <AnimatePresence>
         {!loadingComplete && (
           <motion.div 
@@ -122,17 +119,16 @@ const Portfolio = () => {
             animate="visible"
             exit="exit"
           >
-            <div className="text-center">
+            <div className="text-center px-4 w-full max-w-md">
               <motion.div
                 initial={{ scale: 0 }}
-                animate={{ scale: [0, 1.2, 1] }}
+                animate={{ scale: [0, 1] }}
                 transition={{ duration: 1, ease: "easeInOut" }}
-                className="mb-4 text-blue-600"
+                className="mb-4 text-blue-600 overflow-hidden"
               >
-                <span className="text-5xl font-bold">
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold whitespace-nowrap inline-block">
                   <span>&lt;</span>
-                  Ashwin.build(dev)
-                  
+                  Ashwin.dev
                   <span>/&gt;</span>
                 </span>
               </motion.div>
@@ -140,7 +136,7 @@ const Portfolio = () => {
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="h-1 bg-blue-500 max-w-md mx-auto"
+                className="h-1 bg-blue-500 mx-auto"
               ></motion.div>
             </div>
           </motion.div>
