@@ -76,7 +76,7 @@ const SocialButtons = () => {
       
       {/* Resume - Now with background color */}
       <motion.a 
-        href={`${process.env.PUBLIC_URL}/Ashwin_Thomas_Resume..pdf`}
+        href="https://raw.githubusercontent.com/ashwinthomas03/ashwin-portfolio/main/Ashwin_Thomas_Resume..pdf"
         target="_blank"
         rel="noopener noreferrer"
         variants={itemVariants}
