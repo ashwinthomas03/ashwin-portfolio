@@ -60,9 +60,9 @@ const Home = () => {
             options={{
               strings: [
                 'Problem Solver',
-                'Computer Science Student',
+                'Computer & Data Science Student',
                 'Software Developer',
-                'UI/UX Enthusiast'
+                'IT Support Specialist',
               ],
               autoStart: true,
               loop: true,

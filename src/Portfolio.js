@@ -37,7 +37,7 @@ const Portfolio = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Handle scroll//testing
+  // Handle scroll
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section');
@@ -109,7 +109,7 @@ const Portfolio = () => {
 
   return (
     <>
-      {/* Loading Screen - Made responsive for mobile */}
+      {/* Loading Screen - Fixed for all screen sizes */}
       <AnimatePresence>
         {!loadingComplete && (
           <motion.div 
@@ -119,31 +119,33 @@ const Portfolio = () => {
             animate="visible"
             exit="exit"
           >
-            <div className="text-center px-4 w-full max-w-md">
+            <div className="text-center px-8 w-full max-w-xl mx-auto"> {/* Increased padding and max width */}
               <motion.div
                 initial={{ scale: 0 }}
-                animate={{ scale: [0, 1] }}
+                animate={{ scale: [0, 0.9] }} 
                 transition={{ duration: 1, ease: "easeInOut" }}
-                className="mb-4 text-blue-600 overflow-hidden"
+                className="mb-6 text-blue-600"
               >
-                <span className="text-3xl sm:text-4xl md:text-5xl font-bold whitespace-nowrap inline-block">
+                {/* Logo text with better sizing and display properties */}
+                <div className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold">
                   <span>&lt;</span>
                   Ashwin.build(dev)
                   <span>/&gt;</span>
-                </span>
+                </div>
               </motion.div>
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
                 className="h-1 bg-blue-500 mx-auto"
+                style={{ maxWidth: "80%" }} 
               ></motion.div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Main Content, test*/}
+      {/* Main Content */}
       <motion.div 
         className="relative min-h-screen bg-gray-50"
         variants={contentVariants}
