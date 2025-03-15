@@ -9,7 +9,7 @@ import Projects from './Projects';
 import Contact from './Contact';
 import './index.css';
 
-const Portfolio = () => {
+const Portfolio = () => {//test
   const [activeSection, setActiveSection] = useState('home');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -126,7 +126,7 @@ const Portfolio = () => {
                 transition={{ duration: 1, ease: "easeInOut" }}
                 className="mb-6 text-blue-600"
               >
-                {/* Logo text with better sizing and display properties */}
+                {/* Logo text with better sizing and display properties test*/}
                 <div className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold">
                   <span>&lt;</span>
                   Ashwin.build(dev)
