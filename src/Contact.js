@@ -228,7 +228,12 @@ const Contact = () => {
       <div className="mt-20 py-6 border-t border-gray-200">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-600">© {new Date().getFullYear()} Ashwin Thomas. All rights reserved.</p>
-          <p className="text-gray-600">Ashwin Thomas. All rights reserved.</p>
+          <p className="text-gray-600"> 
+           <br></br>
+          </p>
+          <p className="text-gray-600">This website was designed using Figma and developed using React,js and TailwindCSS</p>
+          <p className="text-gray-600">Thank you for visiting my portfolio!</p>
+
 
         </div>
 

@@ -58,6 +58,31 @@ nav button {
   border-bottom: none;
 }
 
+.skill-tag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.15);
+}
+
+/* Optional: Alternate skill tag colors for visual variety */
+.skill-tag:nth-child(3n+1) {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #2974ed;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
 /* The timeline circles */
 .timeline-item::before {
   content: '';
@@ -67,7 +92,7 @@ nav button {
   width: 16px; /* Circle width */
   height: 16px; /* Circle height */
   border-radius: 50%;
-  background-color: #3B82F6; /* Blue-500 color */
+  background-color: #2e79f3; /* Blue-500 color */
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
   z-index: 2; /* Ensure it's above the line */
 }
@@ -304,6 +329,8 @@ nav button {
     top: 4px;
     right: 6px;
   }
+
+  
   
  
 }

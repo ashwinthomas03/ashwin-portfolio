@@ -188,7 +188,7 @@ const Experience = () => {
                     ))}
                   </ul>
                   
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-3 mt-4">
                     {exp.skills.map((skill, idx) => (
                       <span key={idx} className="skill-tag">
                         {skill}

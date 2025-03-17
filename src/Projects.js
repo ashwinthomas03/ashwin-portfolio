@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'Travel AI Scheduler',
     description: 'An intelligent travel scheduler app that uses AI to generate custom itineraries based on user choices and responses.',
-    image: 'public/logo192.png', // Replace with a proper path or placeholdertest
+    image: 'public/favicon.ico', // Replace with a proper path or placeholdertest
     technologies: ['React', 'TypeScript', 'SCSS', 'DynamoDB'],
     github: 'https://github.com/ashwinthomas03/TravelAI.git',
     live: '' // Leave empty if no live link
