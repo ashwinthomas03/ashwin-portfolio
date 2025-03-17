@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'Travel AI Scheduler',
     description: 'An intelligent travel scheduler app that uses AI to generate custom itineraries based on user choices and responses.',
-    image: '/placeholder-travel.jpg', // Replace with a proper path or placeholder
+    image: 'public/logo192.png', // Replace with a proper path or placeholder
     technologies: ['React', 'TypeScript', 'SCSS', 'DynamoDB'],
     github: 'https://github.com/ashwinthomas03/TravelAI.git',
     live: '' // Leave empty if no live link
@@ -17,7 +17,7 @@ const projects = [
   {
     title: 'Fitness App',
     description: 'A comprehensive fitness application offering tailored workout plans for specific muscle groups, calorie tracking, water intake monitoring, and a workout log.',
-    image: '/placeholder-fitness.jpg', // Replace with a proper path or placeholder
+    image: 'public/logo192.png', // Replace with a proper path or placeholder
     technologies: ['React Native', 'MySQL', 'JavaScript', 'CSS'],
     github: 'https://github.com/ashwinthomas03/fitness-app',
     live: '' // Leave empty if no live link
