@@ -19,7 +19,7 @@ const projects = [
     description: 'A comprehensive fitness application offering tailored workout plans for specific muscle groups, calorie tracking, water intake monitoring, and a workout log.',
     image: 'public/logo192.png', // Replace with a proper path or placeholder
     technologies: ['React Native', 'MySQL', 'JavaScript', 'CSS'],
-    github: 'https://github.com/ashwinthomas03/fitness-app',
+    github: 'https://github.com/ashwinthomas03/Fitness-App.git',
     live: '' // Leave empty if no live link
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     description: 'A real-time messaging application with a server that allows multiple clients to communicate over a TCP connection.',
     image: '/placeholder-messenger.jpg', // Replace with a proper path or placeholder
     technologies: ['Java', 'Sockets'],
-    github: 'https://github.com/ashwinthomas03/instant-messenger',
+    github: 'https://github.com/ashwinthomas03/InstantMessenger.git',
     live: '' // Leave empty if no live link
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     description: 'A secure banking application featuring authentication, deposit, withdraw, account dashboard, profile update, and support for multiple accounts.',
     image: '/placeholder-bank.jpg', // Replace with a proper path or placeholder
     technologies: ['Java', 'MySQL'],
-    github: 'https://github.com/ashwinthomas03/bank-program',
+    github: 'https://github.com/ashwinthomas03/Bank.git',
     live: '' // Leave empty if no live link
   },
   {
@@ -43,7 +43,6 @@ const projects = [
     description: 'A comprehensive warehouse inventory system with item management and a tkinter frontend featuring login, signup, and a dashboard.',
     image: '/placeholder-inventory.jpg', // Replace with a proper path or placeholder
     technologies: ['Python', 'Tkinter'],
-    github: 'https://github.com/ashwinthomas03/inventory-system',
     live: '' // Leave empty if no live link
   }
 ];
