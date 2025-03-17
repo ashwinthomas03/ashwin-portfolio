@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { FiExternalLink, FiGithub, FiCode } from 'react-icons/fi';
 import './index.css';
 
-// Updated with real projects from resume
+// Updated with real projects from resume, testing change
 const projects = [
   {
     title: 'Travel AI Scheduler',
