@@ -4,12 +4,12 @@ import { useInView } from 'react-intersection-observer';
 import { FiExternalLink, FiGithub, FiCode } from 'react-icons/fi';
 import './index.css';
 
-// Updated with real projects from resume, testing change
+// Updated with real projects from resume
 const projects = [
   {
     title: 'Travel AI Scheduler',
     description: 'An intelligent travel scheduler app that uses AI to generate custom itineraries based on user choices and responses.',
-    image: 'public/favicon.ico', // Replace with a proper path or placeholdertest
+    image: `${process.env.PUBLIC_URL}/images/Travel.jpg`,
     technologies: ['React', 'TypeScript', 'SCSS', 'DynamoDB'],
     github: 'https://github.com/ashwinthomas03/TravelAI.git',
     live: '' // Leave empty if no live link
@@ -17,7 +17,7 @@ const projects = [
   {
     title: 'Fitness App',
     description: 'A comprehensive fitness application offering tailored workout plans for specific muscle groups, calorie tracking, water intake monitoring, and a workout log.',
-    image: 'public/logo192.png', // Replace with a proper path or placeholder
+    image: `${process.env.PUBLIC_URL}/images/fitnessapp.png`, // Using your existing logo192.png 
     technologies: ['React Native', 'MySQL', 'JavaScript', 'CSS'],
     github: 'https://github.com/ashwinthomas03/Fitness-App.git',
     live: '' // Leave empty if no live link
@@ -25,7 +25,7 @@ const projects = [
   {
     title: 'Instant Messenger',
     description: 'A real-time messaging application with a server that allows multiple clients to communicate over a TCP connection.',
-    image: '/placeholder-messenger.jpg', // Replace with a proper path or placeholder
+    image: `${process.env.PUBLIC_URL}/images/messenger.png`, // Reusing Travel.jpg for now
     technologies: ['Java', 'Sockets'],
     github: 'https://github.com/ashwinthomas03/InstantMessenger.git',
     live: '' // Leave empty if no live link
@@ -33,7 +33,7 @@ const projects = [
   {
     title: 'Bank Program',
     description: 'A secure banking application featuring authentication, deposit, withdraw, account dashboard, profile update, and support for multiple accounts.',
-    image: '/placeholder-bank.jpg', // Replace with a proper path or placeholder
+    image: `${process.env.PUBLIC_URL}/images/bank.png`, // Reusing Travel.jpg for now
     technologies: ['Java', 'MySQL'],
     github: 'https://github.com/ashwinthomas03/Bank.git',
     live: '' // Leave empty if no live link
@@ -41,8 +41,9 @@ const projects = [
   {
     title: 'Inventory Management System',
     description: 'A comprehensive warehouse inventory system with item management and a tkinter frontend featuring login, signup, and a dashboard.',
-    image: '/placeholder-inventory.jpg', // Replace with a proper path or placeholder
+    image: `${process.env.PUBLIC_URL}/images/inventory.png`, // Reusing Travel.jpg for now
     technologies: ['Python', 'Tkinter'],
+    github: 'https://github.com/ashwinthomas03/inventory-system',
     live: '' // Leave empty if no live link
   }
 ];
@@ -83,6 +84,16 @@ const Projects = () => {
     }
   };
 
+  // Debug function to check image loading
+  const handleImageLoad = (title) => {
+    console.log(`Image for ${title} loaded successfully`);
+  };
+
+  // Debug function to check image errors
+  const handleImageError = (title, imagePath) => {
+    console.error(`Image for ${title} failed to load from path: ${imagePath}`);
+  };
+
   return (
     <section
       id="projects"
@@ -105,13 +116,33 @@ const Projects = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="project-card"
+              className="project-card bg-white p-6 rounded-lg shadow-md"
               whileHover={{ y: -10 }}
             >
-              {/* Project image/preview */}
+              {/* Project image/preview with fallback */}
               <div className="relative h-48 mb-6 overflow-hidden rounded-lg bg-blue-100 flex items-center justify-center">
-                <FiCode className="text-blue-500" size={48} />
-                <div className="project-overlay rounded-lg">
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={`${project.title} preview`} 
+                    className="object-cover w-full h-full"
+                    onLoad={() => handleImageLoad(project.title)}
+                    onError={(e) => {
+                      handleImageError(project.title, project.image);
+                      // Show fallback icon
+                      e.target.style.display = 'none';
+                      e.target.parentNode.querySelector('.fallback-icon').style.display = 'block';
+                    }}
+                  />
+                ) : (
+                  <FiCode className="text-blue-500" size={48} />
+                )}
+                <div className="fallback-icon" style={{ display: 'none' }}>
+                  <FiCode className="text-blue-500" size={48} />
+                </div>
+                
+                {/* Overlay with links */}
+                <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-300 rounded-lg">
                   <div className="flex space-x-4">
                     {project.github && (
                       <a 
@@ -144,7 +175,7 @@ const Projects = () => {
               {/* Technologies */}
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.technologies.map((tech, idx) => (
-                  <span key={idx} className="skill-tag">
+                  <span key={idx} className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
                     {tech}
                   </span>
                 ))}
@@ -158,4 +189,3 @@ const Projects = () => {
 };
 
 export default Projects;
-//testing
