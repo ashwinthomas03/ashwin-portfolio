@@ -44,7 +44,7 @@ const projects = [
     image: `${process.env.PUBLIC_URL}/images/inventory.png`, // Reusing Travel.jpg for now
     technologies: ['Python', 'Tkinter'],
     github: 'https://github.com/ashwinthomas03/inventory-system',
-    live: '' // Leave empty if no live link
+    live: '' // Leave empty if no live link test
   }
 ];
 
