@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiMail, FiPhone, FiLinkedin, FiGithub, FiSend, FiMapPin } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import './index.css';
 
 const Contact = () => {
@@ -12,6 +13,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const form = useRef();
 
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -34,15 +36,30 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // Replace these with your actual EmailJS service ID, template ID, and public key
+    emailjs.sendForm(
+      'service_p683g2m', 
+      'template_c0j7b4q', 
+      form.current, 
+      'qiYXm_ZLUOptlu037'
+    )
+    .then((result) => {
+      console.log('Email sent successfully:', result.text);
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
       
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error.text);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      
+      // Reset error status after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
+    });
   };
 
   // Animation variants
@@ -154,7 +171,7 @@ const Contact = () => {
             <div className="bg-white p-8 rounded-2xl shadow-md">
               <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send Me a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
                   <input
@@ -163,7 +180,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="form-input"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your name"
                     required
                   />
@@ -177,7 +194,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="form-input"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your email"
                     required
                   />
@@ -190,8 +207,9 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="form-input min-h-32"
+                    className="form-input w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your message"
+                    rows="5"
                     required
                   ></textarea>
                 </div>
@@ -218,6 +236,16 @@ const Contact = () => {
                     Message sent successfully!
                   </motion.p>
                 )}
+
+                {submitStatus === 'error' && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-red-600 text-center mt-4"
+                  >
+                    There was an error sending your message. Please try again.
+                  </motion.p>
+                )}
               </form>
             </div>
           </motion.div>
@@ -231,12 +259,9 @@ const Contact = () => {
           <p className="text-gray-600"> 
            <br></br>
           </p>
-          <p className="text-gray-600">This website was designed using Figma and developed using React,js and TailwindCSS</p>
+          <p className="text-gray-600">This website was designed using Figma and developed using React.js and TailwindCSS</p>
           <p className="text-gray-600">Thank you for visiting my portfolio!</p>
-
-
         </div>
-
       </div>
     </section>
   );

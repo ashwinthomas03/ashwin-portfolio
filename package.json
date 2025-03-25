@@ -4,6 +4,7 @@
   "homepage": "https://ashwinthomas03.github.io/ashwin-portfolio",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "cra-template": "1.2.0",
     "framer-motion": "^12.5.0",
     "gh-pages": "^6.3.0",
