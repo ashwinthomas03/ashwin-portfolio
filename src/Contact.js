@@ -49,7 +49,7 @@ const Contact = () => {
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
       
-      // Reset status after 5 seconds
+      // Reset status after 5 seconds, test
       setTimeout(() => setSubmitStatus(null), 5000);
     })
     .catch((error) => {
