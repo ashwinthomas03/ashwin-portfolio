@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ashwin-portfolio/static/css/main.52d1b147.css",
-    "main.js": "/ashwin-portfolio/static/js/main.048692c8.js",
+    "main.js": "/ashwin-portfolio/static/js/main.fdb356a5.js",
     "static/media/pic.jpg": "/ashwin-portfolio/static/media/pic.f212635672dd5e3dfb86.jpg",
     "index.html": "/ashwin-portfolio/index.html",
     "main.52d1b147.css.map": "/ashwin-portfolio/static/css/main.52d1b147.css.map",
-    "main.048692c8.js.map": "/ashwin-portfolio/static/js/main.048692c8.js.map"
+    "main.fdb356a5.js.map": "/ashwin-portfolio/static/js/main.fdb356a5.js.map"
   },
   "entrypoints": [
     "static/css/main.52d1b147.css",
-    "static/js/main.048692c8.js"
+    "static/js/main.fdb356a5.js"
   ]
 }
